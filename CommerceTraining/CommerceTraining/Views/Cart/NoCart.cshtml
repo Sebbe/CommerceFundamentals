@@ -1,0 +1,18 @@
+﻿@model CommerceTraining.Models.ViewModels.CartViewModel
+
+<div>
+  @*@Html.PropertyFor(m => m.MainBody)*@
+</div>
+
+<div>
+    EmptyCartView
+    <ul>
+        @foreach (var item in Model.messages)
+        {
+            <li>
+                @item
+            </li>
+
+        }
+    </ul>
+</div>

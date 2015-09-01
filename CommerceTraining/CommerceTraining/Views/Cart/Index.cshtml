@@ -1,0 +1,49 @@
+﻿@model CommerceTraining.Models.ViewModels.CartViewModel
+
+<div>
+    Hello cart-world
+    
+</div>
+
+<div>
+    WF-exec
+    <ul>
+        @foreach (var item in Model.messages)
+        {
+            <li>
+                Code: @item.ToString()
+
+            </li>
+        }
+    </ul>
+</div>
+
+
+<div>
+    LineItems
+    <ul>
+        @foreach (var item in Model.lineItems)
+        {
+            <li>
+                Code: @item.Code
+                Placed Price: @item.PlacedPrice.ToString("C")
+                Qty: @item.Quantity.ToString("####")
+            </li>
+        }
+    </ul>
+</div>
+
+<div>
+
+    Cart total: @Model.cartTotal
+</div>
+@*<div>
+    <div>@Html.ActionLink("Checkout","CheckOut")</div>
+</div>*@
+<div>
+    @*using (@Html.BeginForm("CheckIn", "MyBookings", new { BookingId = connection.BookingId, Url = Request.Url.ToString() }))*@
+    @using (@Html.BeginForm("Checkout", "Cart", null ))
+    {
+    <button class="btn btn-sm btn-link">Check Out</button>
+    }
+</div>

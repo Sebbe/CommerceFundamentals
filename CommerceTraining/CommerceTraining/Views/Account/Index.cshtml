@@ -1,0 +1,24 @@
+﻿@model CommerceTraining.Models.ViewModels.AccountViewModel
+
+<div>
+
+</div>
+
+<div>
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+    {
+        <input type="text" name="userName" />
+        <input type="text" name="passWord" />
+        <input type="submit" value="Log In" />
+    }
+</div>
+
+CreateAccount
+<div>
+    @using (Html.BeginForm("CreateAccount", "Account", FormMethod.Post))
+    {
+        <input type="text" name="userName" />
+        <input type="text" name="passWord" />
+        <input type="submit" value="Create Account" />
+    }
+</div>
