@@ -1,0 +1,20 @@
+@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+
+@model CommerceTraining.Models.ViewModels.PageViewModel<CommerceTraining.Models.Pages.StartPage>
+
+
+@*ToDo: uncomment/create when the categories exist (Mod. C)*@
+                                                           @*<div>
+            Top Level Categories
+            <ul>
+                @foreach (var item in Model.topLevelCategories)
+                {
+
+                    <li>
+                        <img src="@Model.ThumbnailUrl(item)" /> @Html.ContentLink(item.ContentLink)
+                    </li>
+                }
+            </ul>
+        </div>*@
+
