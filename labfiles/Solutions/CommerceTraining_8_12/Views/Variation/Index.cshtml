@@ -1,0 +1,51 @@
+﻿@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+
+@model CommerceTraining.Models.ViewModels.FashionVariationViewModel
+
+<div>
+    Variant page
+</div>
+
+<div>
+    <img src="@Model.image">
+</div>
+
+<div>
+    <strong>Default Price: </strong> @Html.PropertyFor(m => m.priceString)
+</div>
+
+<div>
+    <strong>Discount Price: </strong> @Html.PropertyFor(m=>m.discountPrice.Money.Amount)
+</div>
+
+<div>
+    @Html.CheckBoxFor(m=> m.CanBeMonogrammed) Can have a monogram 
+</div>
+
+
+    
+<div>
+    @using (Html.BeginForm("AddToCart", "Variation"))
+    {
+        <div>
+            Quantity: <input type="text" name="Quantity" value="1" />
+        </div>
+        <div>
+            Monogram: <input type="text" name="Monogram" />
+        </div>
+        <div>
+            <input type="submit" value="Add to cart" />
+        </div>
+    }
+</div>
+
+<div>
+    @using (Html.BeginForm("AddToWishList", "Variation"))
+    {
+        <div>
+            <input type="submit" value="Add to wishlist" />
+        </div>
+    }
+</div>
+
